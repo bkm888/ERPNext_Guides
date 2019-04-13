@@ -245,7 +245,7 @@ If you were to issue the bench restore command now, this server would be ready f
 I named this script “external_files” and placed it in the /bin directory so I can type it like a command.
 Also again, you must set the script file to be executable with the following command:
 
-`chmod +x ~/home/def_user/bin/cycle_backups`
+`chmod +x ~/home/def_user/bin/external_files`
 
 Now you are ready to move on…
 
