@@ -40,7 +40,7 @@ So, let’s get started!! If you followed the instructions up to this point you 
 
 From this point forward there will be many references to the “default user account” on the servers. Since they are both identical the account should also be identical on them. The default user account is the linux user account that has the ERPNext installation within it. If you used the defaults in the easy install script that account would be /home/frappe/ however I recommend that you add the --user switch to the easy install script at install time and make the default account your cloud servers linux user login account. In this document it will always be called “def_user”
 
-##Step #2:
+Step #2:
 
 On the primary server perform the following commands from the default user account.
 
