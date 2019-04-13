@@ -1,0 +1,22 @@
+#!/bin/bash
+#
+# This script will cycle the most recent file in
+# the /current directory the the /recent directory
+# and then purge /recent down to the last 6 files.
+# This script is intended to be run by a crontab entry
+# at about 12:15am to load the last backup from the
+# previous day into /recent thereby creating a 6 day
+# record of the midnight backups.
+
+# First copy most recent file from /current to /recent
+
+cp $(ls -t /home/def_user/current/* | head -1) /home/def_user/recent
+
+# Now we purge the /recent directory down to the
+# last 6 files (should be the last 6 midnight backups)
+
+find /home/def_user/recent -maxdepth 1 -type f -name "*.tar.gz" -print0 | xargs -r0 ls -t | tail -n +7 | tr '\n' '\0' | xargs -r0 rm
+
+# This should complete the rotation of files in this test
+# BKM - Apr 08,2019 @ 8:18pm
+

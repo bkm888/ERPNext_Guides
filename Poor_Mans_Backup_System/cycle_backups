@@ -1,0 +1,27 @@
+#!/bin/sh
+#
+# This script os triggered by and entry in incrontab.
+# When incron detects a new file in the /drop directory
+# it runs this script.
+# Ths script moves the newely dropped file from /drop
+# to the /current directory and then purges /current
+# down to a size fixed in the find command.
+
+rm /home/def_user/local_ready/*
+rm /home/def_user/local_restore/*
+
+cp -f /home/def_user/drop/*.tar.gz /home/def_user/local_ready/
+
+mv /home/def_user/drop/*.tar.gz /home/def_user/current/
+
+rm /home/def_user/drop/*
+
+find /home/def_user/current -maxdepth 1 -type f -name "*.tar.gz" -print0 | xargs -r0 ls -t | tail -n +16 | tr '\n' '\0' | xargs -r0 rm
+
+tar -xzf /home/def_user/local_ready/*.tar.gz -C /home/def_user/local_restore/
+
+gunzip /home/def_user/local_restore/db_bkup.sql.gz
+
+# This should complete the movement of files in this test
+# BKM - Apr 8,2019 @ 9:48pm
+
