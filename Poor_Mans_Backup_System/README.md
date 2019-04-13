@@ -49,11 +49,11 @@ Step #2:
 
 On the primary server perform the following commands from the default user account.
 
-> mkdir /home/def_user/bin
-> mkdir /home/def_user/backup
-> mkdir /home/def_user/backup/current
-> mkdir /home/def_user/backup/last
-> mkdir /home/def_user/backup/bk_wip
+$ mkdir /home/def_user/bin
+$ mkdir /home/def_user/backup
+$ mkdir /home/def_user/backup/current
+$ mkdir /home/def_user/backup/last
+$ mkdir /home/def_user/backup/bk_wip
 
 You now have a simple directory structure for holding your backup files on the primary server and easily managing them.
 
