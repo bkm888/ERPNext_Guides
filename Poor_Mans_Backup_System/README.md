@@ -73,11 +73,6 @@ Use the nano editor and create the following file named ‘bkup_cycle’ in the 
 #
 # This script performs on backup cycle. A cron job will be used
 # to tell this script when to run thereby generating the cycle.
-#
-# In the last command(s) of this script we attempt to 'scp' the newly
-# created file to a backup / storage host.
-
-# First clear out the wip directory
 
 rm -f -r /home/erp_jmi/backup/bk_wip/*
 sleep 1
