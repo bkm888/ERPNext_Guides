@@ -1,8 +1,8 @@
 #!/bin/sh
 #
 
-rm /home/def_user/frappe-next/sites/site1.local/private/files/*
-rm /home/def_user/frappe-next/sites/site1.local/prublic/files/*
+rm /home/def_user/frappe-bench/sites/site1.local/private/files/*
+rm /home/def_user/frappe-bench/sites/site1.local/public/files/*
 tar -xzf /home/def_user/local_restore/pri-files.tar.gz -C /home/def_user/frappe-bench/sites/site1.local/private/files/
 tar -xzf /home/def_user/local_restore/pub-files.tar.gz -C /home/def_user/frappe-bench/sites/site1.local/public/files/
 
